@@ -3,16 +3,7 @@ from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import Command
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-user_main_keyboard = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="Menyu")],
-        [KeyboardButton(text="Mening buyurtmalarim")],
-        [KeyboardButton(text="Savat"), KeyboardButton(text="Aloqa")],
-        [KeyboardButton(text="Xabar yuborish"), KeyboardButton(text="Sozlamalar")],
-    ],
-    resize_keyboard=True,
-    is_persistent=True
-)
+
 
 menu_keyboard = ReplyKeyboardMarkup(
     keyboard=[
