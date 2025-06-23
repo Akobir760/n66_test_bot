@@ -5,10 +5,11 @@ from aiogram import Bot
 from aiogram.enums import ParseMode
 from aiogram.enums import ParseMode
 from routers import common, register
+from core.table_queries import initializing_table
 
 
 async def startup():
-    pass
+    initializing_table()
 
 
 async def shutdown():
