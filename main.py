@@ -12,9 +12,52 @@ async def startup():
     initializing_table()
 
 
-async def shutdown():
-    pass
+import logging
+from asyncio import run
 
+from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
+
+from middlewares.db_settings import DbSessionMiddleware
+from routers import start, register, feedback, backs
+from utils.commands import set_my_commands
+from core.config import TOKEN
+
+
+async def startup(bot: Bot):
+    await set_my_commands(bot)
+    await bot.send_message(text="Bot start to work", chat_id=844817222)
+
+
+async def shutdown(bot: Bot):
+    await bot.send_message(text="Bot stopped", chat_id=844817222)
+
+
+async def main():
+    bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)
+    dp = Dispatcher()
+
+    dp.include_router(router=start.router)
+    dp.include_router(router=register.router)
+    dp.include_router(router=feedback.router)
+    dp.include_router(router=backs.router)
+
+    dp.message.middleware.register(DbSessionMiddleware())
+
+    dp.startup.register(startup)
+    dp.shutdown.register(shutdown)
+
+    await dp.start_polling(bot, polling_timeout=0)
+
+
+if __name__ == '__main__':
+    logging.basicConfig(
+        format="[%(asctime)s] - %(levelname)s - %(name)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        level=logging.INFO
+    )
+    logging.getLogger("aiogram.event").setLevel(logging.WARNING)
+    run(main())
 async def main():
     bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)   
     dp = Dispatcher()
@@ -22,7 +65,6 @@ async def main():
     dp.include_router(router=register.router)
 
     dp.startup.register(startup)
-    dp.shutdown.register(shutdown)
     await dp.start_polling(bot, polling_timeout=0)
 
 
