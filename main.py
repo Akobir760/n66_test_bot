@@ -1,6 +1,6 @@
 from asyncio import run
 from aiogram import Bot, Dispatcher
-from core.config import TOKEN
+from core.config import TOKEN, DEVELOPER
 from aiogram import Bot
 from aiogram.enums import ParseMode
 from aiogram.enums import ParseMode
@@ -26,11 +26,11 @@ from core.config import TOKEN
 
 async def startup(bot: Bot):
     await set_my_commands(bot)
-    await bot.send_message(text="Bot start to work", chat_id=844817222)
+    await bot.send_message(text="Bot start to work", chat_id=DEVELOPER)
 
 
 async def shutdown(bot: Bot):
-    await bot.send_message(text="Bot stopped", chat_id=844817222)
+    await bot.send_message(text="Bot stopped", chat_id=DEVELOPER)
 
 
 async def main():
