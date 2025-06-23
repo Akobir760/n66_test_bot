@@ -3,7 +3,7 @@ from aiogram import Bot, Dispatcher
 from core.config import TOKEN
 from aiogram import Bot
 from aiogram.enums import ParseMode
-from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
 from routers import common, register
 
 
@@ -15,7 +15,7 @@ async def shutdown():
     pass
 
 async def main():
-    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))    
+    bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)   
     dp = Dispatcher()
     dp.include_router(router=common.router)
     dp.include_router(router=register.router)
