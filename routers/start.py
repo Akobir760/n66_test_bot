@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from db_queries.user import get_user
 from filters.is_admin import IsAdmin
 from keyboards.default.admin import admin_main_menu
-from keyboards.default.user import user_main_menu
+from keyboards.default.user import user_main_keyboard
 from keyboards.inline.user import languages
 from states.user import Register
 
@@ -28,4 +28,4 @@ async def user_start_handler(message: types.Message, state: FSMContext, session:
         await state.set_state(Register.language)
     else:
         text = "Assalomu alaykum, welcome back"
-        await message.answer(text=text, reply_markup=user_main_menu)
+        await message.answer(text=text, reply_markup=user_main_keyboard)

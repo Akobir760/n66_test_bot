@@ -14,7 +14,7 @@ DB_PORT = os.getenv("DB_PORT")
 
 TOKEN = os.getenv("TOKEN")
 DEVELOPER = 844817222
-ADMINS = []
+ADMINS = [844817222]
 
 DB_CONFIG = {
     "database": DB_NAME,
