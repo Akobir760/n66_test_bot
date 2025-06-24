@@ -4,7 +4,6 @@ from typing import Optional, Union, Any
 import psycopg2
 from psycopg2.extras import DictCursor, DictRow
 
-from core.config import DB_CONFIG
 
 logging.basicConfig(level=logging.INFO, filename='logs.log')
 logger = logging.getLogger(__name__)
@@ -16,7 +15,6 @@ class DatabaseManager:
         self.cursor: Optional[psycopg2.extensions.cursor] = None
 
     def __enter__(self) -> "DatabaseManager":
-        self.conn = psycopg2.connect(**DB_CONFIG)
         self.cursor = self.conn.cursor(cursor_factory=DictCursor)
         return self
 

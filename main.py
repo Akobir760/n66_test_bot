@@ -1,27 +1,23 @@
 from asyncio import run
 from aiogram import Bot, Dispatcher
-from core.config import TOKEN, DEVELOPER
+from core.config import  DEVELOPER, TOKEN
 from aiogram import Bot
 from aiogram.enums import ParseMode
 from aiogram.enums import ParseMode
 from routers import common, register
 from core.table_queries import initializing_table
 
+# TOKEN = "8099267684:AAEIOZGBnGK5yNy1f1IMsuu9SzH5_-BqNKA"
 
 async def startup():
     initializing_table()
 
 
 import logging
-from asyncio import run
-
-from aiogram import Bot, Dispatcher
-from aiogram.enums import ParseMode
 
 from middlewares.db_settings import DbSessionMiddleware
 from routers import start, register, feedback, backs
 from utils.commands import set_my_commands
-from core.config import TOKEN
 
 
 async def startup(bot: Bot):

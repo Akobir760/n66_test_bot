@@ -12,6 +12,7 @@ async def get_user(chat_id: int, session: AsyncSession):
         user = result.scalars().one_or_none()
         return user
     except Exception as e:
+        print(e)
         logging.error(e)
         return None
 
@@ -30,6 +31,7 @@ async def register(data: dict, session: AsyncSession):
         await session.refresh(user)
         return user.id
     except Exception as e:
+        print(e)
         logging.error(e)
         await session.rollback()
         return None

@@ -26,3 +26,11 @@ user_main_keyboard = ReplyKeyboardMarkup(
     is_persistent=True
 )
 
+
+async def back_user_menu_keyboard():
+    ReplyKeyboardMarkup(
+        keyboard=[[
+            KeyboardButton(text="Back")
+        ]], resize_keyboard=True
+    )
+
