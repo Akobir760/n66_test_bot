@@ -16,3 +16,6 @@ TOKEN = os.getenv("TOKEN")
 DEVELOPER = 844817222
 ADMINS = []
 
+I18N_DOMAIN = 'lang'
+LOCALES_DIR = 'locale'
+

@@ -1,13 +1,12 @@
 from asyncio import run
 from aiogram import Bot, Dispatcher
 from core.config import  DEVELOPER, TOKEN
-from aiogram import Bot
-from aiogram.enums import ParseMode
-from aiogram.enums import ParseMode
 from routers import common, register
 from core.table_queries import initializing_table
+from loader import bot, dp
+from aiogram.enums import ParseMode
 
-# TOKEN = "8099267684:AAEIOZGBnGK5yNy1f1IMsuu9SzH5_-BqNKA"
+
 
 async def startup():
     initializing_table()
@@ -30,8 +29,6 @@ async def shutdown(bot: Bot):
 
 
 async def main():
-    bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)
-    dp = Dispatcher()
 
     dp.include_router(router=start.router)
     dp.include_router(router=register.router)

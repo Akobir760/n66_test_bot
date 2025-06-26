@@ -20,7 +20,7 @@ user_main_keyboard = ReplyKeyboardMarkup(
         [KeyboardButton(text="Menu 📕")],
         [KeyboardButton(text="my orders 🥄")],
         [KeyboardButton(text="basket 🧺"), KeyboardButton(text="call ☎️")],
-        [KeyboardButton(text="send message 📧"), KeyboardButton(text="settings ⚙️")],
+        [KeyboardButton(text="Send feedback ✍️"), KeyboardButton(text="settings ⚙️")],
     ],
     resize_keyboard=True,
     is_persistent=True
