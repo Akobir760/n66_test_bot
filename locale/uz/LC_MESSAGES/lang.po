@@ -54,27 +54,27 @@ msgstr "Iltimos, manzilingizni yuboring"
 
 #: keyboards/default/user.py:21
 msgid "Menu 📕"
-msgstr ""
+msgstr "Menyu 📕"
 
 #: keyboards/default/user.py:22
 msgid "my orders 🥄"
-msgstr ""
+msgstr "Mening buyurtmalarim"
 
 #: keyboards/default/user.py:23
 msgid "basket 🧺"
-msgstr ""
+msgstr "Savat 🧺"
 
 #: keyboards/default/user.py:23
 msgid "call ☎️"
-msgstr ""
+msgstr "Aloqa ☎️"
 
 #: keyboards/default/user.py:24
 msgid "Send feedback ✍️"
-msgstr ""
+msgstr "Izoh yuborish ✍️"
 
 #: keyboards/default/user.py:24
 msgid "settings ⚙️"
-msgstr ""
+msgstr "Sozlamalar ⚙️"
 
 #: routers/backs.py:13
 msgid "Main menu"

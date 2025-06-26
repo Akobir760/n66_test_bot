@@ -1,7 +1,7 @@
 from aiogram import Router, types, F
 from states.user import Register
 from aiogram.fsm.context import FSMContext
-from keyboards.default.user import phone_number_share, location_share, user_main_keyboard
+from keyboards.default.user import phone_number_share_keyboard, location_share_keyboard, user_main_keyboard_keyboard
 from loader import _
 
 router = Router()
@@ -21,7 +21,7 @@ async def get_user_full_name_handler(message: types.Message, state:FSMContext):
     data = await state.get_data()
     language = data.get('language')
 
-    await message.answer(text=_("Please share your phone number", locale=language), reply_markup=phone_number_share)
+    await message.answer(text=_("Please share your phone number", locale=language), reply_markup=await phone_number_share_keyboard())
     await state.set_state(Register.phone_number)
 
 
@@ -33,7 +33,7 @@ async def get_user_phone_number_handler(message: types.Message, state:FSMContext
     language = data.get('language')
 
 
-    await message.answer(text=_("Please share your location", locale=language), reply_markup=location_share)
+    await message.answer(text=_("Please share your location", locale=language), reply_markup=await location_share_keyboard())
     await state.set_state(Register.location)
 
 
@@ -45,7 +45,7 @@ async def get_user_location_handler(message: types.Message, state:FSMContext):
     language = data.get('language')
 
 
-    await message.answer(text=_("You have successfully registered!", locale=language), reply_markup=user_main_keyboard)
+    await message.answer(text=_("You have successfully registered!", locale=language), reply_markup=await user_main_keyboard_keyboard())
     await state.clear()
 
 

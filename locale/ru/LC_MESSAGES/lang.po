@@ -55,27 +55,27 @@ msgstr "Пожалуйста, поделитесь своим местополо
 
 #: keyboards/default/user.py:21
 msgid "Menu 📕"
-msgstr ""
+msgstr "Меню 📕"
 
 #: keyboards/default/user.py:22
 msgid "my orders 🥄"
-msgstr ""
+msgstr "мои заказы 🥄"
 
 #: keyboards/default/user.py:23
 msgid "basket 🧺"
-msgstr ""
+msgstr "корзина 🧺"
 
 #: keyboards/default/user.py:23
 msgid "call ☎️"
-msgstr ""
+msgstr "вызов ☎️"
 
 #: keyboards/default/user.py:24
 msgid "Send feedback ✍️"
-msgstr ""
+msgstr "Отправить отзыв ✍️"
 
 #: keyboards/default/user.py:24
 msgid "settings ⚙️"
-msgstr ""
+msgstr "настройки ⚙️"
 
 #: routers/backs.py:13
 msgid "Main menu"
