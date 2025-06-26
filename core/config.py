@@ -16,3 +16,15 @@ TOKEN = os.getenv("TOKEN")
 DEVELOPER = 844817222
 ADMINS = []
 
+I18N_DOMAIN = 'lang'
+LOCALES_DIR = 'locale'
+
+
+CHANNELS = [
+    {
+        "name": "channel 1", 
+        "link": "test_channeln66",
+        "chat_id": 2799858045
+    }
+]
+
