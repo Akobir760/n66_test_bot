@@ -6,6 +6,7 @@ from core.table_queries import initializing_table
 from loader import bot, dp, i18n
 from aiogram.enums import ParseMode
 from middlewares.language import LanguageMiddleware
+from middlewares.subscription import SubscribeMiddleware
 
 
 
@@ -38,6 +39,7 @@ async def main():
 
     dp.message.middleware.register(DbSessionMiddleware())
     dp.message.middleware.register(LanguageMiddleware(i18n=i18n))
+    dp.message.middleware.register(SubscribeMiddleware())
 
     dp.startup.register(startup)
     dp.shutdown.register(shutdown)
