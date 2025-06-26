@@ -4,13 +4,14 @@ from aiogram.fsm.context import FSMContext
 from keyboards.default.user import back_user_menu_keyboard, user_main_keyboard
 from states.user import Feedback
 from core.config import DEVELOPER
+from loader import _
 
 router = Router()
 
 
 @router.message(F.text == "Send feedback ✍️")
 async def send_feedback_handler(message: types.Message, state: FSMContext):
-    text = "Please enter your message in one text"
+    text = _("Please enter your message in one text")
     await message.answer(text=text, reply_markup=back_user_menu_keyboard)
 
     await state.set_state(Feedback.feedback)
@@ -25,7 +26,7 @@ Feedback: {message.text}
     """
     await bot.send_message(text=feedback, chat_id=DEVELOPER)
 
-    text = "Your feedback is sent to admins ✅"
+    text = _("Your feedback is sent to admins ✅")
     await message.answer(text=text, reply_markup=user_main_keyboard)
     await state.clear()
 

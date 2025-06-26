@@ -3,8 +3,9 @@ from aiogram import Bot, Dispatcher
 from core.config import  DEVELOPER, TOKEN
 from routers import common, register
 from core.table_queries import initializing_table
-from loader import bot, dp
+from loader import bot, dp, i18n
 from aiogram.enums import ParseMode
+from middlewares.language import LanguageMiddleware
 
 
 
@@ -36,6 +37,7 @@ async def main():
     dp.include_router(router=backs.router)
 
     dp.message.middleware.register(DbSessionMiddleware())
+    dp.message.middleware.register(LanguageMiddleware(i18n=i18n))
 
     dp.startup.register(startup)
     dp.shutdown.register(shutdown)
