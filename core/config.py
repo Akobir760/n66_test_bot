@@ -16,6 +16,8 @@ TOKEN = os.getenv("TOKEN")
 DEVELOPER = 844817222
 ADMINS = []
 
+BASE_WEBHOOK_URL = os.getenv("BASE_WEBHOOK_URL")
+
 I18N_DOMAIN = 'lang'
 LOCALES_DIR = 'locale'
 
