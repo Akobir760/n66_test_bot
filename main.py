@@ -24,7 +24,7 @@ WEBHOOK_SECRET = "SECRET"
 
 
 async def startup(bot: Bot):
-    await set_my_commands(bot)
+    # await set_my_commands(bot)
     await bot.set_webhook(
         url=f"{BASE_WEBHOOK_URL}{WEBHOOK_PATH}",
         secret_token=WEBHOOK_SECRET,
